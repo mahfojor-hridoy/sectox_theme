@@ -1,0 +1,1 @@
+# sectox_theme
