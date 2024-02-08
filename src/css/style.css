@@ -1,3 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+/* Color Palate*/
+:root {
+  --primary-color: #3c8599;
+  --secondary-color: #212121;
+  --text-color: #212121;
+  --black-theme-color: #171717;
+  --accent-color: #ffb614;
+  --light-theme: #ffffff;
+  --dark-theme: #000000;
+  --light-text: #ffffff;
+}
 
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background: var(--light-theme);
+}
+
+.top-header {
+  background: var(--black-theme-color);
+  display: flex;
+  align-items: center;
+  padding: 18px 0;
+}
+.top-header p {
+  text-align: center;
+  color: var(--light-text);
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.top-header p span {
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Start Header Area */
+.main-header {
+  background: #ececec;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  margin-bottom: 0;
+}
+.navigation li {
+  display: inline-block;
+  padding: 0 30px;
+  list-style: none;
+  text-align: center;
+}
+.navigation li a {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 42px 0;
+  display: block;
+  transition: 0.2s ease-in-out;
+}
+.navigation li:hover > a {
+  color: var(--primary-color);
+}
 
 /*# sourceMappingURL=style.css.map */
