@@ -9,67 +9,174 @@
   --light-theme: #ffffff;
   --dark-theme: #000000;
   --light-text: #ffffff;
+  --border-color: #e8e8e8;
+  --text-gray-color: #696868;
 }
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  background: var(--light-theme);
+  background: #e6e6e6;
 }
 header {
-}
-.top-header {
-  background: var(--black-theme-color);
-  display: flex;
-  align-items: center;
-  padding: 18px 0;
-
-  p {
+  .tp-notification-bar {
+    background: var(--black-theme-color);
+    padding: 13px 0;
     text-align: center;
-    color: var(--light-text);
-    font-size: 16px;
-    margin-bottom: 0;
-    font-weight: 400;
-    line-height: 1.2;
 
-    span {
-      color: var(--accent-color);
+    & p {
+      color: var(--light-text);
       font-size: 16px;
-      font-weight: 700;
-      line-height: 1.2;
+      font-weight: 400;
+      margin: 0;
+
+      & span {
+        color: var(--accent-color);
+        font-size: 16px;
+        font-weight: 700;
+      }
     }
   }
-}
-/* Start Header Area */
-.main-header {
-  background: #ececec;
-}
-.logo {
-  display: flex;
-  align-items: center;
-}
-.navigation {
-  margin-bottom: 0;
+  nav {
+    display: flex;
+    background: var(--light-theme);
+  }
+  .tp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tp-logo {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+  ul.tp-menus {
+    margin: 0;
+    padding: 0;
 
-  & li {
-    display: inline-block;
-    padding: 0 27px;
-    list-style: none;
-    text-align: center;
+    & li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 28px;
+      position: relative;
+      &.has-dropdown:after {
+        content: "+";
+      }
+      & a {
+        display: inline-block;
+        color: var(--text-color);
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: capitalize;
+        padding: 43px 0;
+        transition: 0.2s;
+      }
+      &:hover > {
+        & a {
+          color: var(--primary-color);
+        }
+      }
+      ul.tp-submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--dark-theme);
+        width: 220px;
+        border-radius: 5px;
+        margin: 0;
+        padding: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.2s ease;
 
-    & a {
+        & li {
+          display: block;
+          margin: 0;
+
+          & a {
+            display: block;
+            color: var(--light-text);
+            padding: 10px 20px;
+          }
+          &:hover > {
+            & a {
+              background: var(--primary-color);
+            }
+          }
+        }
+      }
+      &:hover > {
+        .tp-submenu {
+          top: 80%;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .tp-header-ecommerce-item {
+    display: flex;
+    align-items: center;
+
+    .tp-btn {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      padding: 14px;
+      margin-left: 20px;
+    }
+  }
+  .tp-btn-primary {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--light-text);
+    background: var(--primary-color);
+    padding: 14px 38px;
+    margin-left: 20px;
+  }
+}
+// Start Slider Area
+
+.tp-slider {
+  background: #c5bfbf;
+
+  & .tp-slider-item {
+    min-height: 810px;
+    display: flex;
+    align-items: center;
+  }
+  .tp-slider-content {
+    & > span {
+      color: var(--light-text);
+      background: var(--primary-color);
       font-size: 16px;
       font-weight: 700;
-      text-transform: capitalize;
-      text-decoration: none;
-      color: var(--text-color);
-      padding: 42px 0;
-      display: block;
-      transition: 0.2s ease-in-out;
+      text-transform: uppercase;
+      padding: 7px 10px;
+      display: inline-block;
     }
-    &:hover > {
-      & a {
-        color: var(--primary-color);
-      }
+    h1 {
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0;
+      margin-top: 20px;
+    }
+  }
+  & p {
+    color: var(--text-gray-color);
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 18px;
+  }
+  & .tp-slider-btn-box {
+    & .tp-slider-install {
+      font-size: 48px;
+      font-weight: 700;
     }
   }
 }
